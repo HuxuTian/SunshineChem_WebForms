@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Masterpages/Site.Master" CodeBehind="HomePage.master.cs" Inherits="SunshineChem.Masterpages.HomePage" %>
+
+<%@ Register TagPrefix="ssc" TagName="Carousel" Src="~/UserControls/Carousel.ascx" %>
+<%@ Register TagPrefix="ssc" TagName="RecommendProduct" Src="~/UserControls/RecommendProduct.ascx" %>
+<%@ Register TagPrefix="ssc" TagName="FeaturedContent" Src="~/UserControls/FeaturedContent.ascx" %>
+
+<asp:Content ID="HomePage" ContentPlaceHolderID="MainBody" runat="server">
+    <div class="slider-block-wraper">
+        <ssc:Carousel runat="server" ID="LandingPageCarousel" />
+    </div>
+    <div class="recommend-product-wraper">
+        <ssc:RecommendProduct runat="server" />
+    </div>
+    <div class="featured-content-block">
+        <ssc:FeaturedContent runat="server" />
+    </div>
+</asp:Content>
+

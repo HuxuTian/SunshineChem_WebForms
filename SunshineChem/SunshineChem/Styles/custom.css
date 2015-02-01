@@ -1,0 +1,127 @@
+﻿html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+.home {
+    background: #eaeaea;
+}
+
+.content-container {
+    position: relative;
+    background-color: #fff;
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    min-height: 1000px;
+}
+
+/* Header */
+
+.header {
+    margin: 0 auto;
+}
+
+.logo {
+    float: left;
+}
+
+.home-page-nav-and-search-block {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main-nav {
+    position: relative;
+}
+
+div ul[class=rmRootGroup rmHorizontal] {
+    border-width: 1px;
+    /* border-style: solid; */
+    border-color: #e3e2e2 #e3e2e2 #fff;
+    background: #d6d5d4;
+    background-image: linear-gradient(#fff,#d6d5d4);
+    box-shadow: 0 2px 2px #e3e2e2;
+}
+
+.home-page-search-outer-block {
+    border-style: solid;
+    float: left;
+    width: 300px;
+    height: 40px;
+    border-width: 1px;
+    border-color: #e3e2e2 #e3e2e2 #fff;
+    background: #d6d5d4 url('WebResource.axd?d=izLpXnGq8KQRiOjrnMjiKdmgeDhlbk3GQ0w8pCP6kh92cujqcbc8Dpts…WF2kc0WAyxigbgf3QhkMO9ZfcLM16lKO2mScDmYeL-mVRkThS6z0&t=635536553860000000') 0 0 repeat-x;
+    background-image: linear-gradient(#fff,#d6d5d4);
+    box-shadow: 0 2px 2px #e3e2e2;
+}
+
+.home-page-search-inner-block {
+    text-align: center;
+    padding-top: 5px;
+}
+
+/* Main body*/
+
+.main-body-block {
+    /*padding-top: 20px;
+    padding-right: 25px;
+    padding-left: 25px;
+    width: 1000px;
+    height: 1000px;
+    background-color: white;
+    overflow: hidden;*/
+}
+
+.recommend-product-table-title {
+    background-color: #e6e6e6;
+    margin: 0px;
+    padding: 10px;
+    font-size: 20px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.slider-block-wraper {
+    float: right;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+.recommend-product-wraper {
+    margin-top: 25px;
+    width: 600px;
+    height: 400px;
+    float: right;
+    margin-right: 30px;
+}
+
+.featured-content-block {
+    float: left;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.featured-content-item {
+    width: 313px;
+    margin-bottom: 15px;
+    height: 246px;
+    background: #f0f0f0;
+    padding: 15px;
+}
+
+.featured-content-item-image {
+    width: 283px;
+    height: 175px;
+}
+
+.featured-content-item-text {
+    margin: 5px 0;
+    font-size: 17px;
+}

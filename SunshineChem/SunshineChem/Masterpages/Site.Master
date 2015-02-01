@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SunshineChem.Masterpages.Site" %>
+
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register TagPrefix="ssc" TagName="MainNav" Src="~/UserControls/MainNav.ascx" %>
+<%@ Register TagPrefix="ssc" TagName="HomeSearchBox" Src="~/UserControls/HomeSearchBox.ascx" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../Styles/custom.css" type="text/css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="Header" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="home">
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager runat="server" ID="RadScriptManager1"></telerik:RadScriptManager>
+        <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server"></telerik:RadAjaxManager>
+        <div class="content-container">
+            <div class="header">
+                <div class="logo">
+                    <img src="/Images/logo.jpg" alt="Logo" />
+                </div>
+                <div class="home-page-nav-and-search-block">
+                    <div class="mian-nav">
+                        <ssc:MainNav runat="server" ID="MainNav" />
+                        <div class="home-page-search-outer-block">
+                            <div class="home-page-search-inner-block">
+                                <ssc:HomeSearchBox runat="server" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-body-block">
+                <asp:ContentPlaceHolder ID="MainBody" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div>
+                <asp:ContentPlaceHolder ID="Footer" runat="server">
+                    <div style="position: absolute; bottom:0px; left:0; display: block; border: 1px solid #e5e5e5; padding: 10px; background-color: #4b4747; font-size: 12px; width: 1000px; margin: 0 auto; text-align: left; overflow: hidden; clear:both">
+                    </div>
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
