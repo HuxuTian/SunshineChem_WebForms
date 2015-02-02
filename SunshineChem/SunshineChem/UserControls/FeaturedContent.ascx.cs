@@ -21,18 +21,18 @@ namespace SunshineChem.UserControls
             var items = ContentService.GetByIds(ContentServiceExtension.IDsToIDList(itemIDs)).Select(c => new FeaturedContentItem(c));
             FeaturedContentRepeater.DataSource = items;
             FeaturedContentRepeater.DataBind();
-            //DeleteNodes();
+            DeleteNodes();
         }
 
         public void DeleteNodes()
         {
-            var children = ContentService.GetChildren(ConfigManager.ProductRepository).Where(c => c.ContentType.Alias.Equals("Product"));
-            //var count = children.Count();
-            //var toMove = children.Take(count - 20);
+            var children = ContentService.GetDescendants(ConfigManager.ProductRepository).Where(c => c.ContentType.Alias.Equals("Product"));
             foreach (var c in children)
             {
-                ContentService.Move(c, 3148);
-            }            
+                c.Properties["chemicalStructure"].Value = 1113;
+                ContentService.Save(c);
+                ContentService.Publish(c);
+            }
         }
 
 

@@ -8,9 +8,9 @@
 <telerik:RadGrid runat="server" Skin="Silk" ID="GridRecommendProduct" Height="100%" Width="100%" AutoGenerateColumns="False" GroupPanelPosition="Top">
     <MasterTableView DataKeyNames="ID">
         <Columns>
-            <telerik:GridHyperLinkColumn DataTextField="CatNumber" HeaderText="Cat.#" DataNavigateUrlFields="NavigationUrl" />
+            <telerik:GridHyperLinkColumn DataTextField="CatNumber" HeaderText="Cat. No." DataNavigateUrlFields="NavigationUrl" />
             <telerik:GridBoundColumn DataField="Name" HeaderText="Name" />
-            <telerik:GridBoundColumn DataField="CasNumber" HeaderText="CAS" />
+            <telerik:GridBoundColumn DataField="CasNumber" HeaderText="CAS Number" />
             <telerik:GridBoundColumn DataField="Package" HeaderText="Package" />
             <telerik:GridBoundColumn DataField="Price" HeaderText="Price" />
         </Columns>

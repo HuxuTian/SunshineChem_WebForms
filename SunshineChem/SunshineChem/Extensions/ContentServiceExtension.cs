@@ -133,7 +133,7 @@ namespace SunshineChem.Extensions
         {
             var property = content.Properties[fieldAlias];
             var value = string.Empty;
-            if (property != null)
+            if (property.Value != null)
             {
                 value = property.Value.ToString();
             }

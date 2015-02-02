@@ -1,7 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Masterpages/Site.Master" CodeBehind="LandingPage.master.cs" Inherits="SunshineChem.Masterpages.LandingPage" %>
+
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <%@ Register TagPrefix="ssc" TagName="ProductCategoryPanel" Src="~/UserControls/ProductCategoryPanel.ascx" %>
 
 <asp:Content ID="LandingPage" ContentPlaceHolderID="MainBody" runat="server">
-    <ssc:ProductCategoryPanel runat="server" />
+    <div style="margin-top: 20px; margin-left:30px; margin-right:30px;">
+        <ssc:ProductCategoryPanel runat="server" />
+    </div>
 </asp:Content>

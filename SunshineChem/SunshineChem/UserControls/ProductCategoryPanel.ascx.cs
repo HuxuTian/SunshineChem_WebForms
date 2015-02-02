@@ -9,6 +9,7 @@ using Umbraco.Core;
 using Umbraco.Core.Models;
 using Umbraco.Core.Services;
 using SunshineChem.Extensions;
+using Telerik.Web.UI;
 
 namespace SunshineChem.UserControls
 {
@@ -27,7 +28,6 @@ namespace SunshineChem.UserControls
                 }
             }
 
-
             ProductCategoryMenu.DataTextField = "Name";
             ProductCategoryMenu.DataFieldID = "ID";
             ProductCategoryMenu.DataFieldParentID = "ParentID";
@@ -45,20 +45,46 @@ namespace SunshineChem.UserControls
 
         protected void ProductResultGrid_NeedDataSource(object sender, Telerik.Web.UI.GridNeedDataSourceEventArgs e)
         {
-            var dataSource = new List<GridItem>();
+            var dataSource = new List<GridViewItem>();
             if (ViewState["ID"] != null)
             {
                 var id = int.Parse(ViewState["ID"].ToString());
-                dataSource = ContentService.GetById(id).GetDescendantsByContentType("Product").Select(i => new GridItem(i)).ToList();
+                dataSource = ContentService.GetById(id).GetDescendantsByContentType("Product").Select(i => new GridViewItem(i)).ToList();
             }
             else
             {
-                dataSource = ContentService.GetById(ConfigManager.ProductRepository).GetDescendantsByContentType("Product").Select(i => new GridItem(i)).ToList();
+                dataSource = ContentService.GetById(ConfigManager.ProductRepository).GetDescendantsByContentType("Product").Select(i => new GridViewItem(i)).ToList();
             }
             ProductResultGrid.DataSource = dataSource;
         }
 
-        public class GridItem
+        protected void ProductResultGrid_ItemCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("RowClick") || e.CommandName.Equals("ExpandCollapse"))
+            {
+                e.Item.Selected = true;
+                bool lastState = e.Item.Expanded;
+
+                if (e.CommandName == "ExpandCollapse")
+                {
+                    lastState = !lastState;
+                }
+
+                CollapseAllRows();
+                e.Item.Expanded = !lastState;
+
+            }
+        }
+
+        private void CollapseAllRows()
+        {
+            foreach (GridItem item in ProductResultGrid.MasterTableView.Items)
+            {
+                item.Expanded = false;
+            }
+        }
+
+        public class GridViewItem
         {
             public int ID { get; set; }
             public string CatNumber { get; set; }
@@ -67,16 +93,30 @@ namespace SunshineChem.UserControls
             public string Package { get; set; }
             public string Price { get; set; }
             public string NavigationUrl { get; set; }
+            public string ImageUrl { get; set; }
+            public string Synonym { get; set; }
+            public string Formula { get; set; }
+            public string MolecularWeight { get; set; }
+            public string Purity { get; set; }
+            public string Solubility { get; set; }
+            public string Storage { get; set; }
 
-            public GridItem(IContent content)
+            public GridViewItem(IContent content)
             {
                 ID = content.Id;
-                CatNumber = content.Properties["catalogNumber"].Value.ToString();
-                Name = content.Properties["chemicalName"].Value.ToString();
-                CasNumber = content.Properties["casNumber"].Value.ToString();
-                Package = content.Properties["package"].Value.ToString();
-                Price = content.Properties["price"].Value.ToString();
+                CatNumber = content.GetFieldValue("catalogNumber");
+                Name = content.GetFieldValue("chemicalName");
+                CasNumber = content.GetFieldValue("casNumber");
+                Package = content.GetFieldValue("package");
+                Price = content.GetFieldValue("price");
+                ImageUrl = content.GetReferenceMediaItem("chemicalStructure").GetImageUrl();
                 NavigationUrl = string.Format("{0}?id={1}", ApplicationContext.Current.Services.ContentService.GetById(ConfigManager.ProductDetail).GetUrl(), content.Id);
+                Synonym = content.GetFieldValue("synonym");
+                Formula = StringHelper.GetChemFormulaString(content.GetFieldValue("formula"));
+                MolecularWeight = content.GetFieldValue("molecularWeight");
+                Purity = content.GetFieldValue("purity");
+                Solubility = content.GetFieldValue("solubility");
+                Storage = content.GetFieldValue("storage");
             }
         }
 
@@ -97,5 +137,7 @@ namespace SunshineChem.UserControls
                 ParentID = c.ParentId;
             }
         }
+
+        
     }
 }

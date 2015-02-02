@@ -63,7 +63,7 @@ div ul[class=rmRootGroup rmHorizontal] {
 
 .home-page-search-inner-block {
     text-align: center;
-    padding-top: 5px;
+    padding-top: 4px;
 }
 
 /* Main body*/
@@ -124,4 +124,27 @@ div ul[class=rmRootGroup rmHorizontal] {
 .featured-content-item-text {
     margin: 5px 0;
     font-size: 17px;
+}
+
+.table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+    border-collapse: separate;
+    border-left: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.table th, .table td {
+    border-top: 1px solid #ddd;
+    padding: 1px 10px;
+}
+
+.table-bordered th, .table-bordered td {
+    border-left: 1px solid #ddd;
 }

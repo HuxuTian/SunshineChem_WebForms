@@ -182,6 +182,7 @@
       <DependentUpon>RecommendProduct.ascx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ConfigManager.cs" />
+    <Compile Include="Utilities\StringHelper.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
