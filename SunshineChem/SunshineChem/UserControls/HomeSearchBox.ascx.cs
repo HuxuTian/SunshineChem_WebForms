@@ -4,6 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Examine.LuceneEngine.SearchCriteria;
+using SunshineChem.Services;
+using SunshineChem.Orchestration;
+using Umbraco.Core;
+using SunshineChem.Utilities;
+using SunshineChem.Extensions;
 
 namespace SunshineChem.UserControls
 {
@@ -11,7 +17,15 @@ namespace SunshineChem.UserControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        protected void SearchButton_Click(object sender, EventArgs e)
+        {
+            var productPage = ApplicationContext.Current.Services.ContentService.GetById(ConfigManager.ProductNode).GetUrl();
+            var redirectUrl = string.Format("{0}?{1}={2}", productPage, "q", SearchTextBox.Text);
+            SearchTextBox.Text = string.Empty;
+            Response.Redirect(redirectUrl);
         }
     }
 }

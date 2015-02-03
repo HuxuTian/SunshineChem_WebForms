@@ -12,6 +12,7 @@ namespace SunshineChem.Utilities
         public const int ImagesFolder = 1096;
         public const int ProductRepository = 1098;
         public const int ProductDetail = 1092;
+        public const int ProductNode = 1103;
 
         // Config Items
         public const int CarouselConfig = 1107;

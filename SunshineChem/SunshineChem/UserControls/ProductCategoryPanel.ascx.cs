@@ -10,6 +10,8 @@ using Umbraco.Core.Models;
 using Umbraco.Core.Services;
 using SunshineChem.Extensions;
 using Telerik.Web.UI;
+using SunshineChem.Orchestration;
+using SunshineChem.Services;
 
 namespace SunshineChem.UserControls
 {
@@ -18,27 +20,37 @@ namespace SunshineChem.UserControls
         private IContentService ContentService { get { return ApplicationContext.Current.Services.ContentService; } }
         protected void Page_Load(object sender, EventArgs e)
         {
-            var rootItems = ContentService.GetById(ConfigManager.ProductRepository).GetChildrenByContentType("Container");
-            var dataSource = rootItems.Select(i => new NavItem() { ID = i.Id, Name = i.Name, ParentID = null }).ToList();
-            foreach (var i in rootItems)
+            // Enter page to browse products by category
+            if (Request["q"] == null)
             {
-                if (i.HasChildren())
+                var rootItems = ContentService.GetById(ConfigManager.ProductRepository).GetChildrenByContentType("Container");
+                var dataSource = rootItems.Select(i => new NavItem() { ID = i.Id, Name = i.Name, ParentID = null }).ToList();
+                foreach (var i in rootItems)
                 {
-                    dataSource.AddRange(i.GetChildrenByContentType("Container").Select(c => new NavItem(c)));
+                    if (i.HasChildren())
+                    {
+                        dataSource.AddRange(i.GetChildrenByContentType("Container").Select(c => new NavItem(c)));
+                    }
                 }
+
+                ProductCategoryMenu.DataTextField = "Name";
+                ProductCategoryMenu.DataFieldID = "ID";
+                ProductCategoryMenu.DataFieldParentID = "ParentID";
+                ProductCategoryMenu.DataValueField = "ID";
+
+                ProductCategoryMenu.DataSource = dataSource.OrderBy(i => i.Name);
+                ProductCategoryMenu.DataBind();
             }
-
-            ProductCategoryMenu.DataTextField = "Name";
-            ProductCategoryMenu.DataFieldID = "ID";
-            ProductCategoryMenu.DataFieldParentID = "ParentID";
-            ProductCategoryMenu.DataValueField = "ID";
-
-            ProductCategoryMenu.DataSource = dataSource.OrderBy(i => i.Name);
-            ProductCategoryMenu.DataBind();
+            else // Enter page by search, HIDE  category menu
+            {
+                ProductCategoryMenu.Visible = false;
+            }
+            
         }
 
         protected void ProductCategoryMenu_ItemClick(object sender, Telerik.Web.UI.RadMenuEventArgs e)
         {
+            // Put category node id into ViewState for grid update
             ViewState["ID"] = e.Item.Value;
             ProductResultGrid.Rebind();
         }
@@ -46,15 +58,25 @@ namespace SunshineChem.UserControls
         protected void ProductResultGrid_NeedDataSource(object sender, Telerik.Web.UI.GridNeedDataSourceEventArgs e)
         {
             var dataSource = new List<GridViewItem>();
-            if (ViewState["ID"] != null)
+
+            // Enter page as search
+            if (Request["q"] != null)
+            {
+                
+                var searchTerm = Request["q"].ToString();
+                var nodeIDs = SearchHandler.GetResultIDs(SearchService.GetSearchResults(searchTerm));
+                dataSource = ContentService.GetByIds(nodeIDs).Select(i => new GridViewItem(i)).ToList();
+            }
+            else if (ViewState["ID"] != null) // Update grid datasource by giving category node id
             {
                 var id = int.Parse(ViewState["ID"].ToString());
                 dataSource = ContentService.GetById(id).GetDescendantsByContentType("Product").Select(i => new GridViewItem(i)).ToList();
             }
-            else
+            else // First time enter this page, show all products
             {
                 dataSource = ContentService.GetById(ConfigManager.ProductRepository).GetDescendantsByContentType("Product").Select(i => new GridViewItem(i)).ToList();
             }
+
             ProductResultGrid.DataSource = dataSource;
         }
 

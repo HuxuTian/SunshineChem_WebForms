@@ -21,7 +21,7 @@ namespace SunshineChem.UserControls
             var items = ContentService.GetByIds(ContentServiceExtension.IDsToIDList(itemIDs)).Select(c => new FeaturedContentItem(c));
             FeaturedContentRepeater.DataSource = items;
             FeaturedContentRepeater.DataBind();
-            DeleteNodes();
+            //DeleteNodes();
         }
 
         public void DeleteNodes()
