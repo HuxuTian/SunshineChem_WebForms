@@ -223,6 +223,7 @@
     <Content Include="Script\jssor.slider.mini.js" />
     <Content Include="Styles\carousel.css" />
     <Content Include="Styles\custom.css" />
+    <Content Include="Styles\normalize.min.css" />
     <Content Include="UserControls\Carousel.ascx" />
     <Content Include="UserControls\FeaturedContent.ascx" />
     <Content Include="UserControls\HomeSearchBox.ascx" />

@@ -21,7 +21,7 @@ namespace SunshineChem.UserControls
         protected void Page_Load(object sender, EventArgs e)
         {
             // Enter page to browse products by category
-            if (Request["q"] == null)
+            if (string.IsNullOrEmpty(Request["q"]))
             {
                 var rootItems = ContentService.GetById(ConfigManager.ProductRepository).GetChildrenByContentType("Container");
                 var dataSource = rootItems.Select(i => new NavItem() { ID = i.Id, Name = i.Name, ParentID = null }).ToList();
@@ -45,7 +45,7 @@ namespace SunshineChem.UserControls
             {
                 ProductCategoryMenu.Visible = false;
             }
-            
+
         }
 
         protected void ProductCategoryMenu_ItemClick(object sender, Telerik.Web.UI.RadMenuEventArgs e)
@@ -60,12 +60,15 @@ namespace SunshineChem.UserControls
             var dataSource = new List<GridViewItem>();
 
             // Enter page as search
-            if (Request["q"] != null)
+            if (!string.IsNullOrEmpty(Request["q"]))
             {
-                
+
                 var searchTerm = Request["q"].ToString();
                 var nodeIDs = SearchHandler.GetResultIDs(SearchService.GetSearchResults(searchTerm));
-                dataSource = ContentService.GetByIds(nodeIDs).Select(i => new GridViewItem(i)).ToList();
+                if (nodeIDs != null && nodeIDs.Count() > 0)
+                {
+                    dataSource = ContentService.GetByIds(nodeIDs).Select(i => new GridViewItem(i)).ToList();
+                }
             }
             else if (ViewState["ID"] != null) // Update grid datasource by giving category node id
             {
@@ -160,6 +163,6 @@ namespace SunshineChem.UserControls
             }
         }
 
-        
+
     }
 }

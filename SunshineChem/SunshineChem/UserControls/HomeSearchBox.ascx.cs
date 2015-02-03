@@ -17,14 +17,16 @@ namespace SunshineChem.UserControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                SearchTextBox.Text = Request["q"];
+            }
         }
 
         protected void SearchButton_Click(object sender, EventArgs e)
         {
             var productPage = ApplicationContext.Current.Services.ContentService.GetById(ConfigManager.ProductNode).GetUrl();
             var redirectUrl = string.Format("{0}?{1}={2}", productPage, "q", SearchTextBox.Text);
-            SearchTextBox.Text = string.Empty;
             Response.Redirect(redirectUrl);
         }
     }

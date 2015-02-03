@@ -15,13 +15,19 @@ namespace SunshineChem.Services
             var searchCriteria = searcher.CreateSearchCriteria(BooleanOperation.Or);
 
             var chemicalNameValue = keyword.Fuzzy();
-            var casValue = keyword;
-            var aliasValue = keyword.MultipleCharacterWildcard();
-            var catValue = keyword.MultipleCharacterWildcard();
-            var query = searchCriteria.Field("chemicalName", chemicalNameValue).Or().Field("casNumber", casValue).Or().Field("synonym", aliasValue).Or().Field("catNumber", catValue).Compile();
+            //var casValue = keyword.Fuzzy();
+            //var casValueExac = keyword;
+            var casValueWild = keyword.MultipleCharacterWildcard();
+            var aliasValue = keyword.Fuzzy();
+            var catValue = keyword.Fuzzy();
+            var query = searchCriteria.Field("chemicalName", chemicalNameValue)
+                .Or().Field("casNumber", casValueWild)
+                .Or().Field("synonym", aliasValue)
+                .Or().Field("catalogNumber", catValue)
+                .Compile();
 
             return searcher.Search(query);
-            
+
         }
     }
 }

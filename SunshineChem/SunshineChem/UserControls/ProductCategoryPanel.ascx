@@ -10,12 +10,21 @@
         <AjaxSettings>
             <telerik:AjaxSetting AjaxControlID="ProductCategoryMenu">
                 <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="ProductResultGrid" />
+                    <telerik:AjaxUpdatedControl ControlID="ProductResultGrid" LoadingPanelID="LoadingPanel"/>
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+            <telerik:AjaxSetting AjaxControlID="ProductResultGrid">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="ProductResultGrid" LoadingPanelID="LoadingPanel"/>
                 </UpdatedControls>
             </telerik:AjaxSetting>
         </AjaxSettings>
     </telerik:RadAjaxManagerProxy>
-    <telerik:RadGrid runat="server" ID="ProductResultGrid" Skin="Silk" AutoGenerateColumns="false" AllowPaging="true" PageSize="15" OnNeedDataSource="ProductResultGrid_NeedDataSource" OnItemCommand="ProductResultGrid_ItemCommand">
+
+    <telerik:RadAjaxLoadingPanel runat="server" Skin="Silk" ID="LoadingPanel"></telerik:RadAjaxLoadingPanel>
+
+    <telerik:RadGrid runat="server" ID="ProductResultGrid" Skin="Silk" AutoGenerateColumns="false" AllowPaging="true" PageSize="15"
+         OnNeedDataSource="ProductResultGrid_NeedDataSource" OnItemCommand="ProductResultGrid_ItemCommand">
         <MasterTableView DataKeyNames="ID" AllowSorting="true" AllowNaturalSort="false">
             <Columns>
                 <telerik:GridHyperLinkColumn DataTextField="CatNumber" HeaderText="Cat. No." DataNavigateUrlFields="NavigationUrl" />

@@ -1,13 +1,18 @@
 ﻿html {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
     box-sizing: inherit;
 }
 
+:focus {
+    outline: none;
+}
+
 .clear {
-    clear:both;
+    clear: both;
 }
 
 .home {
@@ -36,16 +41,16 @@
     position: relative;
     width: 100%;
     margin: 0 auto;
-    clear:both;
+    clear: both;
 }
 
 .main-nav {
     position: relative;
 }
 
-.main-nav .RadMenu_Silk .rmRootGroup {
-    border-width: 1px 0 0 1px;
-}
+    .main-nav .RadMenu_Silk .rmRootGroup {
+        border-width: 1px 0 0 1px;
+    }
 
 .home-page-search-outer-block {
     border-style: solid;
@@ -67,7 +72,7 @@
 
 .main-body-block {
     overflow: hidden;
-    padding-bottom:20px;
+    padding-bottom: 20px;
 }
 
 .recommend-product-table-title {
@@ -102,7 +107,7 @@
     width: 313px;
     margin-bottom: 15px;
     height: 246px;
-    background: #f0f0f0;
+    background: #E6E6E6;
     padding: 15px;
 }
 
