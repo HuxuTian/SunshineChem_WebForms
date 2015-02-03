@@ -5,14 +5,14 @@
 <%@ Register TagPrefix="ssc" TagName="FeaturedContent" Src="~/UserControls/FeaturedContent.ascx" %>
 
 <asp:Content ID="HomePage" ContentPlaceHolderID="MainBody" runat="server">
+    <div class="featured-content-block">
+        <ssc:FeaturedContent runat="server" />
+    </div>
     <div class="slider-block-wraper">
         <ssc:Carousel runat="server" ID="LandingPageCarousel" />
     </div>
     <div class="recommend-product-wraper">
         <ssc:RecommendProduct runat="server" />
-    </div>
-    <div class="featured-content-block">
-        <ssc:FeaturedContent runat="server" />
     </div>
 </asp:Content>
 

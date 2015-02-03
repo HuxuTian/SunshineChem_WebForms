@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Carousel.ascx.cs" Inherits="Umbraco721.UserControls.Carousel" %>
 
 <link type="text/css" href="../Styles/carousel.css" rel="stylesheet" />
-<script type="text/javascript" src="../Script/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="../Script/jssor.slider.mini.js"></script>
 <script type="text/javascript" src="../Script/carousel.js"></script>
 

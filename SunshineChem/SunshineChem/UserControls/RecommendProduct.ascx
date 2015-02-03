@@ -5,7 +5,7 @@
 <div class="recommend-product-table-title">
     Recommend Products
 </div>
-<telerik:RadGrid runat="server" Skin="Silk" ID="GridRecommendProduct" Height="100%" Width="100%" AutoGenerateColumns="False" GroupPanelPosition="Top">
+<telerik:RadGrid runat="server" Skin="Silk" ID="GridRecommendProduct" Height="400" Width="100%" AutoGenerateColumns="False" GroupPanelPosition="Top">
     <MasterTableView DataKeyNames="ID">
         <Columns>
             <telerik:GridHyperLinkColumn DataTextField="CatNumber" HeaderText="Cat. No." DataNavigateUrlFields="NavigationUrl" />

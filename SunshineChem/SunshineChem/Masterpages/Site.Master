@@ -9,6 +9,7 @@
 <head runat="server">
     <title></title>
     <link href="../Styles/custom.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../Script/jquery-1.11.2.min.js"></script>
     <asp:ContentPlaceHolder ID="Header" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -22,13 +23,14 @@
                     <img src="/Images/logo.jpg" alt="Logo" />
                 </div>
                 <div class="home-page-nav-and-search-block">
-                    <div class="mian-nav">
+                    <div class="main-nav">
                         <ssc:MainNav runat="server" ID="MainNav" />
                         <div class="home-page-search-outer-block">
                             <div class="home-page-search-inner-block">
                                 <ssc:HomeSearchBox runat="server" />
                             </div>
                         </div>
+                        <div class="clear"></div>
                     </div>
                 </div>
             </div>
@@ -38,7 +40,7 @@
             </div>
             <div>
                 <asp:ContentPlaceHolder ID="Footer" runat="server">
-                    <div style="position: absolute; bottom:0px; left:0; display: block; border: 1px solid #e5e5e5; padding: 10px; background-color: #4b4747; font-size: 12px; width: 1000px; margin: 0 auto; text-align: left; overflow: hidden; clear:both">
+                    <div style="padding: 10px; background-color: #4b4747; width: 100%;">
                     </div>
                 </asp:ContentPlaceHolder>
             </div>

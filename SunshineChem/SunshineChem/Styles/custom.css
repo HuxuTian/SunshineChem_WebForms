@@ -6,6 +6,10 @@
     box-sizing: inherit;
 }
 
+.clear {
+    clear:both;
+}
+
 .home {
     background: #eaeaea;
 }
@@ -16,7 +20,6 @@
     width: 1000px;
     margin: 0 auto;
     overflow: hidden;
-    min-height: 1000px;
 }
 
 /* Header */
@@ -30,33 +33,27 @@
 }
 
 .home-page-nav-and-search-block {
-    overflow: hidden;
     position: relative;
     width: 100%;
     margin: 0 auto;
+    clear:both;
 }
 
 .main-nav {
     position: relative;
 }
 
-div ul[class=rmRootGroup rmHorizontal] {
-    border-width: 1px;
-    /* border-style: solid; */
-    border-color: #e3e2e2 #e3e2e2 #fff;
-    background: #d6d5d4;
-    background-image: linear-gradient(#fff,#d6d5d4);
-    box-shadow: 0 2px 2px #e3e2e2;
+.main-nav .RadMenu_Silk .rmRootGroup {
+    border-width: 1px 0 0 1px;
 }
 
 .home-page-search-outer-block {
     border-style: solid;
     float: left;
     width: 300px;
-    height: 40px;
-    border-width: 1px;
+    height: 39px;
+    border-width: 1px 1px 0 0;
     border-color: #e3e2e2 #e3e2e2 #fff;
-    background: #d6d5d4 url('WebResource.axd?d=izLpXnGq8KQRiOjrnMjiKdmgeDhlbk3GQ0w8pCP6kh92cujqcbc8Dpts…WF2kc0WAyxigbgf3QhkMO9ZfcLM16lKO2mScDmYeL-mVRkThS6z0&t=635536553860000000') 0 0 repeat-x;
     background-image: linear-gradient(#fff,#d6d5d4);
     box-shadow: 0 2px 2px #e3e2e2;
 }
@@ -69,13 +66,8 @@ div ul[class=rmRootGroup rmHorizontal] {
 /* Main body*/
 
 .main-body-block {
-    /*padding-top: 20px;
-    padding-right: 25px;
-    padding-left: 25px;
-    width: 1000px;
-    height: 1000px;
-    background-color: white;
-    overflow: hidden;*/
+    overflow: hidden;
+    padding-bottom:20px;
 }
 
 .recommend-product-table-title {
@@ -96,14 +88,12 @@ div ul[class=rmRootGroup rmHorizontal] {
 .recommend-product-wraper {
     margin-top: 25px;
     width: 600px;
-    height: 400px;
     float: right;
     margin-right: 30px;
 }
 
 .featured-content-block {
     float: left;
-    position: absolute;
     margin-top: 20px;
     margin-left: 30px;
 }

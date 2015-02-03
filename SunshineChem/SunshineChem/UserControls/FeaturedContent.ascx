@@ -7,7 +7,7 @@
                 <asp:Image runat="server" ID="ContentImage" ImageUrl="<%# Item.ImageUrl %>" CssClass="featured-content-item-image" />
             </a>
             <div><%# Item.Caption %></div>
-            <asp:LinkButton runat="server" ID="ContentLink" Text="<%# Item.ReadMoreText %>" PostBackUrl="<%# Item.ReferenceContent %>" />
+            <asp:HyperLink runat="server" ID="ContentLink" Text="<%# Item.ReadMoreText %>" NavigateUrl="<%# Item.ReferenceContent %>" />
         </div>
     </ItemTemplate>
 </asp:Repeater>
