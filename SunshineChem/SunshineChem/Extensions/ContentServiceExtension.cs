@@ -131,11 +131,10 @@ namespace SunshineChem.Extensions
 
         public static string GetFieldValue(this IContent content, string fieldAlias)
         {
-            var property = content.Properties[fieldAlias];
             var value = string.Empty;
-            if (property.Value != null)
+            if (content.Properties.Contains(fieldAlias) && content.Properties[fieldAlias].Value != null)
             {
-                value = property.Value.ToString();
+                value = content.Properties[fieldAlias].Value.ToString();
             }
             return value;
         }

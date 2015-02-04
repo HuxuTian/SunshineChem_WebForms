@@ -1,0 +1,6 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Masterpages/Site.Master" CodeBehind="ProductDetailPage.master.cs" Inherits="SunshineChem.Masterpages.ProductDetailPage" %>
+<%@ Register TagPrefix="ssc" TagName="ProductDetails" Src="~/UserControls/ProductDetails.ascx" %>
+
+<asp:Content runat="server" ID="ProductDetailPage" ContentPlaceHolderID="MainBody">
+    <ssc:ProductDetails runat="server" />
+</asp:Content>
