@@ -3,6 +3,7 @@
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <%@ Register TagPrefix="ssc" TagName="MainNav" Src="~/UserControls/MainNav.ascx" %>
 <%@ Register TagPrefix="ssc" TagName="HomeSearchBox" Src="~/UserControls/HomeSearchBox.ascx" %>
+<%@ Register TagPrefix="ssc" TagName="FooterNav" Src="~/UserControls/FooterNav.ascx" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -41,8 +42,9 @@
             </div>
             <div>
                 <asp:ContentPlaceHolder ID="Footer" runat="server">
-                    <div style="padding: 10px; background-color: #4b4747; width: 100%;">
-                    </div>
+                    <%--<div style="padding: 10px; background-color: #4b4747; width: 100%;">
+                    </div>--%>
+                    <ssc:FooterNav runat="server" />     
                 </asp:ContentPlaceHolder>
             </div>
         </div>

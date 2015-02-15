@@ -159,6 +159,13 @@
     <Compile Include="UserControls\FeaturedContent.ascx.designer.cs">
       <DependentUpon>FeaturedContent.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FooterNav.ascx.cs">
+      <DependentUpon>FooterNav.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\FooterNav.ascx.designer.cs">
+      <DependentUpon>FooterNav.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\HomeSearchBox.ascx.cs">
       <DependentUpon>HomeSearchBox.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,6 +250,7 @@
     <Content Include="Styles\normalize.min.css" />
     <Content Include="UserControls\Carousel.ascx" />
     <Content Include="UserControls\FeaturedContent.ascx" />
+    <Content Include="UserControls\FooterNav.ascx" />
     <Content Include="UserControls\HomeSearchBox.ascx" />
     <Content Include="UserControls\MainNav.ascx" />
     <Content Include="UserControls\ProductCategoryPanel.ascx" />
