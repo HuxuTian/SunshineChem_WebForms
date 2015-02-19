@@ -143,3 +143,63 @@
 .table-bordered th, .table-bordered td {
     border-left: 1px solid #ddd;
 }
+
+a:link {
+    color: #7d7d7d;
+    text-decoration: none;
+    !important;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footer-container {
+    border-top: 1px solid #BCBCBC;
+    padding: 10px 10px 10px 0;
+    color: #464646;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.footer-table-wraper {
+    float: left;
+    width: 33%;
+    margin-bottom: 10px;
+}
+
+.footer-table {
+    display: table;
+    margin: 0 0 0 8%;
+}
+
+.footer-table-column {
+    float: left;
+}
+
+.footer-table-caption {
+    font-size: 15px;
+    padding: 5px 5px 5px 5px;
+}
+
+.footer-table-row {
+    display: table-row;
+}
+
+.footer-table-cell {
+    display: table-cell;
+    padding: 5px;
+}
+
+.clearfix {
+    width: 102%;
+    overflow: hidden;
+    border-top: 1px solid #BCBCBC;
+    margin: 5px 0 5px 0;
+}
+
+.footer-container address {
+    padding: 7px 5px 0 0;
+    text-align: right;
+    display: block;
+}
