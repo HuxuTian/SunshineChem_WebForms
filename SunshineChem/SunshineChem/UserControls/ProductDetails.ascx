@@ -13,14 +13,11 @@
             <asp:Image runat="server" ID="ProductImage" CssClass="product-image" />
         </div>
     </div>
-
     <div class="product-detail-description">
         <p class="product-detail-description-header">Description</p>
         <asp:Label runat="server" ID="Description" CssClass="" />
     </div>
-    <div>
-        <asp:Label runat="server" ID="Purity" CssClass="" />
-    </div>
+
     <div class="pdf-link-icon">
         <asp:HyperLink runat="server" ID="HNMR" Text="HNMR" CssClass="pdf-link" />
     </div>
@@ -34,10 +31,10 @@
         <asp:HyperLink runat="server" ID="COA" Text="COA" CssClass="pdf-link" />
     </div>
     <div>
-        <asp:Label runat="server" ID="Storage" CssClass="" />
+        <asp:Label runat="server" ID="Purity" CssClass="" />
     </div>
     <div>
-        <asp:Label runat="server" ID="Price" CssClass="" />
+        <asp:Label runat="server" ID="Storage" CssClass="" />
     </div>
     <div>
         <asp:Label runat="server" ID="Shipping" CssClass="" />
@@ -50,23 +47,32 @@
         <asp:Label runat="server" ID="Solubility" CssClass="" />
     </div>
 </div>
-
 <div class="product-detail-price-container">
-    Price:
-    <table>
-        <asp:Repeater ID="PriceTable" runat="server" ItemType="System.Collections.Generic.Dictionary<string, string>">
-            <HeaderTemplate>
-                <tr>
-                    <td>Size</td>
-                    <td>Price</td>
-                </tr>
-            </HeaderTemplate>
-            <ItemTemplate>
-                <tr>
-                    <td><%# Item["size"]%></td>
-                    <td><%# Item["price"] %></td>
-                </tr>
-            </ItemTemplate>
-        </asp:Repeater>
-    </table>
+    <div class="price-title-box">
+        <strong>Price</strong>
+    </div>
+    <div class="price-content-box">
+        <table>
+            <asp:Repeater ID="PriceTable" runat="server" ItemType="System.Collections.Generic.Dictionary<string, string>">
+                <HeaderTemplate>
+                    <thead>
+                        <tr class="price-content-box-title">
+                            <td class="price-title-left">Size</td>
+                            <td>Price</td>
+                        </tr>
+                    </thead>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr>
+                        <td class="price-title-left"><%# Item["size"]%></td>
+                        <td><%# Item["price"] %></td>
+                    </tr>
+                </ItemTemplate>
+            </asp:Repeater>
+        </table>
+    </div>
+    <div class="bulk-inquiry-box">
+        <i class="fa fa-shopping-cart"></i>
+        <strong>Bulk Inquiry</strong>
+    </div>
 </div>

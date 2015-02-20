@@ -34,6 +34,8 @@ namespace SunshineChem.Utilities
         {
             var result = new List<Dictionary<string, string>>();
             var dict = new Dictionary<string, string>();
+
+            // Pattern is : \\"(\w|\d|\$)*\\"
             var regxPattern = "\\\"(\\w|\\d|\\$)*\\\"";
             var regx = new Regex(regxPattern);
             var matches = regx.Matches(keyValues);

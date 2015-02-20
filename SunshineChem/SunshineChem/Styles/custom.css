@@ -208,8 +208,8 @@ a:hover {
 /* Product Details*/
 
 .product-detail-container {
-    float:left;
-    width: 75%;
+    float: left;
+    width: 70%;
     padding: 15px;
 }
 
@@ -228,7 +228,7 @@ a:hover {
 
 .product-detail-image {
     float: right;
-    margin-right:50px;
+    margin-right: 50px;
 }
 
 .product-detail-info {
@@ -258,3 +258,47 @@ a:hover {
     margin: 0 0 10px 0;
     font-weight: bold;
 }
+
+.product-detail-price-container {
+    overflow: hidden;
+    float: right;
+    width: 25%;
+    margin: 15px 15px 0 0;
+}
+
+.price-title-box {
+    padding: 10px 15px 10px;
+    font-size: 24px;
+    border: 1px solid #037dc8;
+    border-bottom: 1px solid #b0b0b0;
+    background: #037dc8;
+    color: #fff;
+}
+
+.price-content-box {
+    border: 1px solid #b0b0b0;
+    border-top: 0;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.price-content-box-title {
+    font-weight: bold;
+}
+
+.price-title-left {
+    padding: 5px 0 5px 40px;
+    width: 80%;
+}
+
+.bulk-inquiry-box {
+    padding: 10px 15px 10px;
+    font-size: 24px;
+    border: 1px solid #f5a71f;
+    background: #f5a71f;
+    color: #fff;
+}
+
+    .bulk-inquiry-box strong {
+        margin-left: 5px;
+    }

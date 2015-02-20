@@ -85,15 +85,6 @@ namespace SunshineChem.UserControls {
         protected global::System.Web.UI.WebControls.Label Description;
         
         /// <summary>
-        /// Purity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Purity;
-        
-        /// <summary>
         /// HNMR control.
         /// </summary>
         /// <remarks>
@@ -130,6 +121,15 @@ namespace SunshineChem.UserControls {
         protected global::System.Web.UI.WebControls.HyperLink COA;
         
         /// <summary>
+        /// Purity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Purity;
+        
+        /// <summary>
         /// Storage control.
         /// </summary>
         /// <remarks>
@@ -137,15 +137,6 @@ namespace SunshineChem.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Storage;
-        
-        /// <summary>
-        /// Price control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Price;
         
         /// <summary>
         /// Shipping control.

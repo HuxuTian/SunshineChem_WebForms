@@ -11,6 +11,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="../Styles/normalize.min.css" />
     <link rel="stylesheet" type="text/css" href="../Styles/custom.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
     <script type="text/javascript" src="../Script/jquery-1.11.2.min.js"></script>
     <asp:ContentPlaceHolder ID="Header" runat="server">
     </asp:ContentPlaceHolder>
