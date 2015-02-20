@@ -220,6 +220,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\a17.png" />
     <Content Include="Images\logo.jpg" />
+    <Content Include="Images\pdf.png" />
     <Content Include="Masterpages\HomePage.Master" />
     <Content Include="Config\404handlers.config" />
     <Content Include="Config\applications.config" />

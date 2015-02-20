@@ -203,3 +203,58 @@ a:hover {
     text-align: right;
     display: block;
 }
+
+
+/* Product Details*/
+
+.product-detail-container {
+    float:left;
+    width: 75%;
+    padding: 15px;
+}
+
+.pdf-link-icon {
+    background: url(/images/pdf.png) no-repeat left 50%;
+}
+
+.pdf-link {
+    padding: 0 0 0 20px;
+}
+
+.product-detail-info-container {
+    overflow: hidden;
+    display: block;
+}
+
+.product-detail-image {
+    float: right;
+    margin-right:50px;
+}
+
+.product-detail-info {
+    float: left;
+}
+
+.product-chemical-name {
+    display: block;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+}
+
+.product-general-prop {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.product-detail-description {
+    font-size: 14px;
+    background: #f0f0f0;
+    padding: 10px;
+    margin: 0 0 30px;
+    text-align: justify;
+}
+
+.product-detail-description-header {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}

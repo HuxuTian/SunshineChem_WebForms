@@ -22,15 +22,6 @@ namespace SunshineChem.UserControls {
         protected global::System.Web.UI.WebControls.Label ChemicalName;
         
         /// <summary>
-        /// ProductImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ProductImage;
-        
-        /// <summary>
         /// Synonym control.
         /// </summary>
         /// <remarks>
@@ -49,15 +40,6 @@ namespace SunshineChem.UserControls {
         protected global::System.Web.UI.WebControls.Label Formula;
         
         /// <summary>
-        /// MolecularWeight control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MolecularWeight;
-        
-        /// <summary>
         /// MfcdNumber control.
         /// </summary>
         /// <remarks>
@@ -67,6 +49,15 @@ namespace SunshineChem.UserControls {
         protected global::System.Web.UI.WebControls.Label MfcdNumber;
         
         /// <summary>
+        /// MolecularWeight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MolecularWeight;
+        
+        /// <summary>
         /// CasNumber control.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,15 @@ namespace SunshineChem.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label CasNumber;
+        
+        /// <summary>
+        /// ProductImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ProductImage;
         
         /// <summary>
         /// Description control.
@@ -173,5 +173,14 @@ namespace SunshineChem.UserControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Solubility;
+        
+        /// <summary>
+        /// PriceTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater PriceTable;
     }
 }

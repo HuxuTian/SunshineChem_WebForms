@@ -137,7 +137,7 @@ namespace SunshineChem.UserControls
                 ImageUrl = content.GetReferenceMediaItem("chemicalStructure").GetImageUrl();
                 NavigationUrl = content.GetUrl();
                 Synonym = content.GetFieldValue("synonym");
-                Formula = StringHelper.GetChemFormulaString(content.GetFieldValue("formula"));
+                Formula = content.GetFieldValue("formula").GetChemFormulaString();
                 MolecularWeight = content.GetFieldValue("molecularWeight");
                 Purity = content.GetFieldValue("purity");
                 Solubility = content.GetFieldValue("solubility");
