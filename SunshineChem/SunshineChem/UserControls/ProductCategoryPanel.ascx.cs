@@ -135,7 +135,7 @@ namespace SunshineChem.UserControls
                 Package = content.GetFieldValue("package");
                 Price = content.GetFieldValue("price");
                 ImageUrl = content.GetReferenceMediaItem("chemicalStructure").GetImageUrl();
-                NavigationUrl = string.Format("{0}?id={1}", ApplicationContext.Current.Services.ContentService.GetById(ConfigManager.ProductDetail).GetUrl(), content.Id);
+                NavigationUrl = content.GetUrl();
                 Synonym = content.GetFieldValue("synonym");
                 Formula = StringHelper.GetChemFormulaString(content.GetFieldValue("formula"));
                 MolecularWeight = content.GetFieldValue("molecularWeight");

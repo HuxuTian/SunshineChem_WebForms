@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="telerik" Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" %>
 
 <div style="float: left; width: 200px;">
-    <telerik:RadMenu runat="server" Flow="Vertical" Width="100%" Height="1000px" OnItemClick="ProductCategoryMenu_ItemClick" Skin="Silk" ID="ProductCategoryMenu"></telerik:RadMenu>
+    <telerik:RadMenu runat="server" Flow="Vertical" Width="100%" OnItemClick="ProductCategoryMenu_ItemClick" Skin="Silk" ID="ProductCategoryMenu"></telerik:RadMenu>
 </div>
 
 <div style="float: right; width: 75%">

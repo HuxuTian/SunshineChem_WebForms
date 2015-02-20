@@ -78,7 +78,7 @@ namespace SunshineChem.UserControls
                 CasNumber = content.Properties["casNumber"].Value.ToString();
                 Package = content.Properties["package"].Value.ToString();
                 Price = content.Properties["price"].Value.ToString();
-                NavigationUrl = string.Format("{0}?id={1}", ApplicationContext.Current.Services.ContentService.GetById(ConfigManager.ProductDetail).GetUrl(), content.Id);
+                NavigationUrl = content.GetUrl();
             }
         }
     }

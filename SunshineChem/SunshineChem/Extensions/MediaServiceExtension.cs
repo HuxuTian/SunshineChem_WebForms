@@ -19,7 +19,12 @@ namespace SunshineChem.Extensions
         }
         public static string GetImageUrl(this IMedia media)
         {
-            return media.Properties["umbracoFile"].Value.ToString();
+            var url = string.Empty;
+            if (media != null)
+            {
+                url = media.Properties["umbracoFile"].Value.ToString();
+            }
+            return url;
         }
 
         public static IMedia GetReferenceMediaItem(this IContent content, string fieldAlias)
