@@ -22,6 +22,33 @@ namespace SunshineChem.UserControls {
         protected global::Telerik.Web.UI.RadMenu ProductCategoryMenu;
         
         /// <summary>
+        /// SearchResultsPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel SearchResultsPanel;
+        
+        /// <summary>
+        /// SearchPageSearchBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadTextBox SearchPageSearchBox;
+        
+        /// <summary>
+        /// SearchPageButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadButton SearchPageButton;
+        
+        /// <summary>
         /// RadAjaxManagerProxy1 control.
         /// </summary>
         /// <remarks>

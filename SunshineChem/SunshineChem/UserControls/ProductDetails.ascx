@@ -17,34 +17,48 @@
         <p class="product-detail-description-header">Description</p>
         <asp:Label runat="server" ID="Description" CssClass="" />
     </div>
-
-    <div class="pdf-link-icon">
-        <asp:HyperLink runat="server" ID="HNMR" Text="HNMR" CssClass="pdf-link" />
-    </div>
-    <div class="pdf-link-icon">
-        <asp:HyperLink runat="server" ID="HPLC" Text="HPLC" CssClass="pdf-link" />
-    </div>
-    <div class="pdf-link-icon">
-        <asp:HyperLink runat="server" ID="MS" Text="MS" CssClass="pdf-link" />
-    </div>
-    <div class="pdf-link-icon">
-        <asp:HyperLink runat="server" ID="COA" Text="COA" CssClass="pdf-link" />
-    </div>
-    <div>
-        <asp:Label runat="server" ID="Purity" CssClass="" />
-    </div>
-    <div>
-        <asp:Label runat="server" ID="Storage" CssClass="" />
-    </div>
-    <div>
-        <asp:Label runat="server" ID="Shipping" CssClass="" />
-    </div>
-    <div>
-        <asp:Label runat="server" ID="Package" CssClass="" />
-    </div>
-
-    <div>
-        <asp:Label runat="server" ID="Solubility" CssClass="" />
+    <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#ChemicalInfo" aria-controls="ChemicalInfo" role="tab" data-toggle="tab">Chemical Info</a>
+            </li>
+            <li role="presentation">
+                <a href="#QualityControl" aria-controls="QualityControl" role="tab" data-toggle="tab">Quality Control</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="ChemicalInfo">
+                <div>
+                    <asp:Label runat="server" ID="Purity" CssClass="" />
+                </div>
+                <div>
+                    <asp:Label runat="server" ID="Storage" CssClass="" />
+                </div>
+                <div>
+                    <asp:Label runat="server" ID="Shipping" CssClass="" />
+                </div>
+                <div>
+                    <asp:Label runat="server" ID="Package" CssClass="" />
+                </div>
+                <div>
+                    <asp:Label runat="server" ID="Solubility" CssClass="" />
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="QualityControl">
+                <div class="pdf-link-icon">
+                    <asp:HyperLink runat="server" ID="HNMR" Text="HNMR" CssClass="pdf-link" />
+                </div>
+                <div class="pdf-link-icon">
+                    <asp:HyperLink runat="server" ID="HPLC" Text="HPLC" CssClass="pdf-link" />
+                </div>
+                <div class="pdf-link-icon">
+                    <asp:HyperLink runat="server" ID="MS" Text="MS" CssClass="pdf-link" />
+                </div>
+                <div class="pdf-link-icon">
+                    <asp:HyperLink runat="server" ID="COA" Text="COA" CssClass="pdf-link" />
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="product-detail-price-container">
@@ -76,3 +90,5 @@
         <strong>Bulk Inquiry</strong>
     </div>
 </div>
+
+

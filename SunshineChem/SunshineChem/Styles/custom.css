@@ -302,3 +302,30 @@ a:hover {
     .bulk-inquiry-box strong {
         margin-left: 5px;
     }
+
+.search-title-box {
+    padding: 5px 10px 5px;
+    font-size: 20px;
+    border: 1px solid #037dc8;
+    border-bottom: 1px solid #b0b0b0;
+    background: #037dc8;
+    color: #fff;
+}
+
+.search-content-box {
+    border: 1px solid #b0b0b0;
+    border-top: 0;
+    padding: 10px;
+    font-size: 13px;
+}
+
+.search-block {
+    overflow:hidden;
+    padding: 5px 0 5px 0;
+}
+
+.search-page-search-btn {
+    margin-top: 10px;
+    float:right;
+}
+

@@ -17,10 +17,7 @@ namespace SunshineChem.UserControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                SearchTextBox.Text = Request["q"];
-            }
+
         }
 
         protected void SearchButton_Click(object sender, EventArgs e)

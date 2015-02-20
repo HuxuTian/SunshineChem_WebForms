@@ -5,17 +5,40 @@
     <telerik:RadMenu runat="server" Flow="Vertical" Width="100%" OnItemClick="ProductCategoryMenu_ItemClick" Skin="Silk" ID="ProductCategoryMenu"></telerik:RadMenu>
 </div>
 
+<asp:Panel runat="server" ID="SearchResultsPanel" Visible="false">
+    <div style="float: left; width: 225px; font-size: 13px;">
+        <div class="search-title-box">
+            <strong>Search</strong>
+        </div>
+        <div class="search-content-box">
+            <div>
+                Search for 
+            <span style="color: red;">"<%= SearchKeyword  %>"</span>
+            </div>
+            <div>
+                Found 
+            <span style="color: red"><%= ResultCount %></span> result(s) in 
+            <span style="color: blue"><%= ElapsedTime %></span> seconds
+            </div>
+            <div class="search-block">
+                <telerik:RadTextBox runat="server" ID="SearchPageSearchBox" Skin="Silk" Width="203"/>
+                <telerik:RadButton runat="server" ID="SearchPageButton" OnClick="SearchPageButton_Click" Text="Search" Skin="Silk" CssClass="search-page-search-btn" />
+            </div>
+        </div>
+    </div>
+</asp:Panel>
+
 <div style="float: right; width: 75%">
     <telerik:RadAjaxManagerProxy ID="RadAjaxManagerProxy1" runat="server">
         <AjaxSettings>
             <telerik:AjaxSetting AjaxControlID="ProductCategoryMenu">
                 <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="ProductResultGrid" LoadingPanelID="LoadingPanel"/>
+                    <telerik:AjaxUpdatedControl ControlID="ProductResultGrid" LoadingPanelID="LoadingPanel" />
                 </UpdatedControls>
             </telerik:AjaxSetting>
             <telerik:AjaxSetting AjaxControlID="ProductResultGrid">
                 <UpdatedControls>
-                    <telerik:AjaxUpdatedControl ControlID="ProductResultGrid" LoadingPanelID="LoadingPanel"/>
+                    <telerik:AjaxUpdatedControl ControlID="ProductResultGrid" LoadingPanelID="LoadingPanel" />
                 </UpdatedControls>
             </telerik:AjaxSetting>
         </AjaxSettings>
@@ -24,7 +47,7 @@
     <telerik:RadAjaxLoadingPanel runat="server" Skin="Silk" ID="LoadingPanel"></telerik:RadAjaxLoadingPanel>
 
     <telerik:RadGrid runat="server" ID="ProductResultGrid" Skin="Silk" AutoGenerateColumns="false" AllowPaging="true" PageSize="15"
-         OnNeedDataSource="ProductResultGrid_NeedDataSource" OnItemCommand="ProductResultGrid_ItemCommand">
+        OnNeedDataSource="ProductResultGrid_NeedDataSource" OnItemCommand="ProductResultGrid_ItemCommand">
         <MasterTableView DataKeyNames="ID" AllowSorting="true" AllowNaturalSort="false">
             <Columns>
                 <telerik:GridHyperLinkColumn DataTextField="CatNumber" HeaderText="Cat. No." DataNavigateUrlFields="NavigationUrl" />
@@ -39,7 +62,7 @@
                 </ParentTableRelation>
             </NestedViewSettings>
             <NestedViewTemplate>
-                <div style="overflow:hidden; border-bottom: 1px dashed #ddd;">
+                <div style="overflow: hidden; border-bottom: 1px dashed #ddd;">
                     <div style="float: left;">
                         <asp:Image runat="server" ImageUrl='<%# Eval("ImageUrl") %>' />
                     </div>

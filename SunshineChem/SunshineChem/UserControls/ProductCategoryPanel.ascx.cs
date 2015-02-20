@@ -12,11 +12,21 @@ using SunshineChem.Extensions;
 using Telerik.Web.UI;
 using SunshineChem.Orchestration;
 using SunshineChem.Services;
+using System.Diagnostics;
 
 namespace SunshineChem.UserControls
 {
     public partial class ProductCategoryPanel : System.Web.UI.UserControl
     {
+        public string ElapsedTime { get; set; }
+        public string SearchKeyword
+        {
+            get
+            {
+                return Request["q"];
+            }
+        }
+        public string ResultCount { get; set; }
         private IContentService ContentService { get { return ApplicationContext.Current.Services.ContentService; } }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,6 +54,7 @@ namespace SunshineChem.UserControls
             else // Enter page by search, HIDE  category menu
             {
                 ProductCategoryMenu.Visible = false;
+                SearchResultsPanel.Visible = true;
             }
 
         }
@@ -61,10 +72,14 @@ namespace SunshineChem.UserControls
 
             // Enter page as search
             if (!string.IsNullOrEmpty(Request["q"]))
-            {
-
+            {               
                 var searchTerm = Request["q"].ToString();
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
                 var nodeIDs = SearchHandler.GetResultIDs(SearchService.GetSearchResults(searchTerm));
+                sw.Stop();
+                ElapsedTime = (sw.ElapsedMilliseconds * 0.001).ToString();
+                ResultCount = nodeIDs.Count().ToString();
                 if (nodeIDs != null && nodeIDs.Count() > 0)
                 {
                     dataSource = ContentService.GetByIds(nodeIDs).Select(i => new GridViewItem(i)).ToList();
@@ -161,6 +176,13 @@ namespace SunshineChem.UserControls
                 ID = c.Id;
                 ParentID = c.ParentId;
             }
+        }
+
+        protected void SearchPageButton_Click(object sender, EventArgs e)
+        {
+            var productPage = ApplicationContext.Current.Services.ContentService.GetById(ConfigManager.ProductNode).GetUrl();
+            var redirectUrl = string.Format("{0}?{1}={2}", productPage, "q", SearchPageSearchBox.Text);
+            Response.Redirect(redirectUrl);
         }
 
 

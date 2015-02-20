@@ -41,7 +41,6 @@ namespace SunshineChem.UserControls
             MS.NavigateUrl = Product.GetReferenceMediaItem("ms").GetImageUrl();
             COA.NavigateUrl = Product.GetReferenceMediaItem("coa").GetImageUrl();
             Storage.Text = Product.GetFieldValue("storage");
-            Price.Text = Product.GetFieldValue("price");
             Shipping.Text = Product.GetFieldValue("shipping");
             Package.Text = Product.GetFieldValue("package");
             Solubility.Text = Product.GetFieldValue("solubility");
