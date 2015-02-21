@@ -91,4 +91,9 @@
     </div>
 </div>
 
-
+<script>
+    $('#QualityControl a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
+</script>
