@@ -10,6 +10,6 @@
 namespace SunshineChem.Masterpages {
     
     
-    public partial class LandingPage {
+    public partial class ContactUsPage {
     }
 }

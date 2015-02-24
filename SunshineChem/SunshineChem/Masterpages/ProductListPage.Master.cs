@@ -10,7 +10,7 @@ using Umbraco.Core.Models;
 
 namespace SunshineChem.Masterpages
 {
-    public partial class LandingPage : System.Web.UI.MasterPage
+    public partial class ProductListPage : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

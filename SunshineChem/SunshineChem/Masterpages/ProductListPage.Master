@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Masterpages/Site.Master" CodeBehind="LandingPage.master.cs" Inherits="SunshineChem.Masterpages.LandingPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Masterpages/Site.Master" CodeBehind="ProductListPage.Master.cs" Inherits="SunshineChem.Masterpages.ProductListPage" %>
 
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <%@ Register TagPrefix="ssc" TagName="ProductCategoryPanel" Src="~/UserControls/ProductCategoryPanel.ascx" %>

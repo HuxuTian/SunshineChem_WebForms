@@ -114,6 +114,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\MediaServiceExtension.cs" />
+    <Compile Include="Masterpages\ContactUsPage.Master.cs">
+      <DependentUpon>ContactUsPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masterpages\ContactUsPage.Master.designer.cs">
+      <DependentUpon>ContactUsPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Masterpages\HomePage.Master.cs">
       <DependentUpon>HomePage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,12 +128,12 @@
     <Compile Include="Masterpages\HomePage.Master.designer.cs">
       <DependentUpon>HomePage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Masterpages\LandingPage.Master.cs">
-      <DependentUpon>LandingPage.Master</DependentUpon>
+    <Compile Include="Masterpages\ProductListPage.Master.cs">
+      <DependentUpon>ProductListPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Masterpages\LandingPage.Master.designer.cs">
-      <DependentUpon>LandingPage.Master</DependentUpon>
+    <Compile Include="Masterpages\ProductListPage.Master.designer.cs">
+      <DependentUpon>ProductListPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Masterpages\ProductDetailPage.Master.cs">
       <DependentUpon>ProductDetailPage.Master</DependentUpon>
@@ -151,6 +158,13 @@
     </Compile>
     <Compile Include="UserControls\Carousel.ascx.designer.cs">
       <DependentUpon>Carousel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ContactUs.ascx.cs">
+      <DependentUpon>ContactUs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ContactUs.ascx.designer.cs">
+      <DependentUpon>ContactUs.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\FeaturedContent.ascx.cs">
       <DependentUpon>FeaturedContent.ascx</DependentUpon>
@@ -239,9 +253,10 @@
     <Content Include="Config\trees.config" />
     <Content Include="Config\umbracoSettings.config" />
     <Content Include="Config\UrlRewriting.config" />
-    <Content Include="Masterpages\LandingPage.Master" />
+    <Content Include="Masterpages\ProductListPage.Master" />
     <Content Include="Masterpages\Site.Master" />
     <Content Include="Masterpages\ProductDetailPage.Master" />
+    <Content Include="Masterpages\ContactUsPage.Master" />
     <None Include="Properties\PublishProfiles\Dev.pubxml" />
     <Content Include="Script\carousel.js" />
     <Content Include="Script\jquery-1.11.2.min.js" />
@@ -250,6 +265,7 @@
     <Content Include="Styles\custom.css" />
     <Content Include="Styles\normalize.min.css" />
     <Content Include="UserControls\Carousel.ascx" />
+    <Content Include="UserControls\ContactUs.ascx" />
     <Content Include="UserControls\FeaturedContent.ascx" />
     <Content Include="UserControls\FooterNav.ascx" />
     <Content Include="UserControls\HomeSearchBox.ascx" />

@@ -1,0 +1,6 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Masterpages/Site.Master" CodeBehind="ContactUsPage.master.cs" Inherits="SunshineChem.Masterpages.ContactUsPage" %>
+
+<%@ Register TagPrefix="ssc" TagName="ContactUs" Src="~/UserControls/ContactUs.ascx" %>
+<asp:Content ID="ContactUsPage" ContentPlaceHolderID="MainBody" runat="server">
+    <ssc:ContactUs runat="server" />
+</asp:Content>

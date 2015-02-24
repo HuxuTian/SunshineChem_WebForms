@@ -275,11 +275,49 @@ a:hover {
     color: #fff;
 }
 
+.contact-us-title-box {
+    padding: 10px 15px 10px;
+    font-size: 20px;
+    border: 1px solid #037dc8;
+    border-bottom: 1px solid #b0b0b0;
+    background: #037dc8;
+    color: #fff;
+}
+
 .price-content-box {
     border: 1px solid #b0b0b0;
     border-top: 0;
     padding: 10px;
     font-size: 14px;
+}
+
+.contact-us-content-box {
+    border: 1px solid #b0b0b0;
+    border-top: 0;
+    padding: 10px 15px 10px 15px;
+    font-size: 14px;
+}
+
+.contact-us-info-container {
+    overflow: hidden;
+    width: 330px;
+    float: right;
+    margin: 40px 30px 30px 30px;
+}
+
+.contact-us-email-content {
+    font-size: 17px;
+    padding: 0px 40px 0px 40px;
+    margin-bottom: 0;
+}
+
+.contact-us-phone {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.contact-us-validation-error-msg {
+    color: red;
 }
 
 .price-content-box-title {
@@ -320,12 +358,39 @@ a:hover {
 }
 
 .search-block {
-    overflow:hidden;
+    overflow: hidden;
     padding: 5px 0 5px 0;
 }
 
 .search-page-search-btn {
     margin-top: 10px;
-    float:right;
+    float: right;
 }
 
+.contact-us-container {
+    overflow: hidden;
+    margin: 30px;
+    width: 500px;
+    float: left;
+}
+
+.contact-us-title {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.contact-us-label {
+    margin: 5px 0 5px 0;
+}
+
+.contact-us-submit-button {
+    float: left;
+    margin: 10px 0 10px 0;
+}
+
+.contact-us-required-msg {
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+    margin: 5px 0 5px 0;
+}
