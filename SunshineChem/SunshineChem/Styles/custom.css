@@ -121,6 +121,10 @@
     font-size: 17px;
 }
 
+.featured-content-caption {
+    margin-top: 5px;
+}
+
 .table {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -400,5 +404,4 @@ a:hover {
 }
 
 .about-us-title {
-
 }

@@ -6,7 +6,7 @@
             <a href="<%# Item.ReferenceContent %>">
                 <asp:Image runat="server" ID="ContentImage" ImageUrl="<%# Item.ImageUrl %>" CssClass="featured-content-item-image" />
             </a>
-            <div><%# Item.Caption %></div>
+            <div class="featured-content-caption"><%# Item.Caption %></div>
             <asp:HyperLink runat="server" ID="ContentLink" Text="<%# Item.ReadMoreText %>" NavigateUrl="<%# Item.ReferenceContent %>" />
         </div>
     </ItemTemplate>
