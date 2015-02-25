@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SunshineChem.Utilities
+namespace SunshineChem.Configuration
 {
     public class ConfigManager
     {
@@ -17,12 +17,6 @@ namespace SunshineChem.Utilities
         // Config Items
         public const int SiteSettings = 1115;
 
-        public class SiteSetting
-        {
-            // Field name alias
-            public const string RecommendProduct = "recommendProduct";
-            public const string FeaturedContent = "featuredContent";
-            public const string Carousel = "carousel";
-        }
+        
     }
 }

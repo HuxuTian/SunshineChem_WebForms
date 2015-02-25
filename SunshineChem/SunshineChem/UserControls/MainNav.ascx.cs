@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using SunshineChem.Extensions;
 using Umbraco.Core;
 using Umbraco.Core.Models;
+using SunshineChem.Configuration;
 
 namespace SunshineChem.UserControls
 {
@@ -14,7 +11,7 @@ namespace SunshineChem.UserControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var rootNodes = ContentServiceExtension.GetChildrenByContentType(SunshineChem.Utilities.ConfigManager.HomeNode, "LandingPage").Select(i => new NavItem { ID = i.Id, ParentID = null, Name = i.Name, NavigationUrl = i.GetUrl() });
+            var rootNodes = ContentServiceExtension.GetChildrenByContentType(ConfigManager.HomeNode, "LandingPage").Select(i => new NavItem { ID = i.Id, ParentID = null, Name = i.Name, NavigationUrl = i.GetUrl() });
             var nodes = rootNodes.ToList();
             
             foreach (var rn in rootNodes)
@@ -26,7 +23,7 @@ namespace SunshineChem.UserControls
                 }
             }
 
-            var homeNode = ApplicationContext.Current.Services.ContentService.GetById(SunshineChem.Utilities.ConfigManager.HomeNode);
+            var homeNode = ApplicationContext.Current.Services.ContentService.GetById(ConfigManager.HomeNode);
             nodes.Insert(0, new NavItem { ID = homeNode.Id, Name = homeNode.Name, NavigationUrl = homeNode.GetUrl(), ParentID = null });
 
             MainNavMenu.DataTextField = "Name";

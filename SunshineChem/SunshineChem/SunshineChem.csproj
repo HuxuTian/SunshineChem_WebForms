@@ -113,6 +113,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\SiteSetting.cs" />
     <Compile Include="Extensions\MediaServiceExtension.cs" />
     <Compile Include="Masterpages\AboutUsPage.Master.cs">
       <DependentUpon>AboutUsPage.Master</DependentUpon>
@@ -237,7 +238,7 @@
     <Compile Include="UserControls\RecommendProduct.ascx.designer.cs">
       <DependentUpon>RecommendProduct.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\ConfigManager.cs" />
+    <Compile Include="Configuration\ConfigManager.cs" />
     <Compile Include="Utilities\StringHelper.cs" />
   </ItemGroup>
   <ItemGroup />

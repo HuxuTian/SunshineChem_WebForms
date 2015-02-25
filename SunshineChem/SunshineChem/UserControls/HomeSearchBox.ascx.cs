@@ -10,6 +10,7 @@ using SunshineChem.Orchestration;
 using Umbraco.Core;
 using SunshineChem.Utilities;
 using SunshineChem.Extensions;
+using SunshineChem.Configuration;
 
 namespace SunshineChem.UserControls
 {

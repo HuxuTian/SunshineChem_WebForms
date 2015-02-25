@@ -1,4 +1,5 @@
-﻿using SunshineChem.Extensions;
+﻿using SunshineChem.Configuration;
+using SunshineChem.Extensions;
 using SunshineChem.Utilities;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace SunshineChem.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var items = ContentService.GetById(ConfigManager.SiteSettings).GetReferenceItems(ConfigManager.SiteSetting.FeaturedContent).Select(c => new FeaturedContentItem(c));
+            var items = ContentService.GetById(ConfigManager.SiteSettings).GetReferenceItems(SiteSetting.FeaturedContent).Select(c => new FeaturedContentItem(c));
             FeaturedContentRepeater.DataSource = items;
             FeaturedContentRepeater.DataBind();
         }

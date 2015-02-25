@@ -9,6 +9,7 @@ using Umbraco.Core;
 using Umbraco.Core.Models;
 using SunshineChem.Extensions;
 using Umbraco.Core.Services;
+using SunshineChem.Configuration;
 
 namespace SunshineChem.UserControls
 {
@@ -18,7 +19,7 @@ namespace SunshineChem.UserControls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var dataSource = ContentService.GetById(ConfigManager.SiteSettings).GetReferenceItems(ConfigManager.SiteSetting.RecommendProduct).Select(i => new GridItem(i));
+            var dataSource = ContentService.GetById(ConfigManager.SiteSettings).GetReferenceItems(SiteSetting.RecommendProduct).Select(i => new GridItem(i));
             GridRecommendProduct.DataSource = dataSource;
             GridRecommendProduct.DataBind();
         }
