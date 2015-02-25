@@ -371,6 +371,11 @@ a:hover {
     float: right;
 }
 
+.search-page-reset-btn {
+    margin-top: 10px;
+    float: left;
+}
+
 .contact-us-container {
     overflow: hidden;
     margin: 30px;

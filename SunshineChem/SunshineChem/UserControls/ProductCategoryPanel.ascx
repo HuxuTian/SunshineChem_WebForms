@@ -21,8 +21,9 @@
             <span style="color: blue"><%= ElapsedTime %></span> seconds
             </div>
             <div class="search-block">
-                <telerik:RadTextBox runat="server" ID="SearchPageSearchBox" Skin="Silk" Width="203"/>
+                <telerik:RadTextBox runat="server" ID="SearchPageSearchBox" Skin="Silk" Width="203" />
                 <telerik:RadButton runat="server" ID="SearchPageButton" OnClick="SearchPageButton_Click" Text="Search" Skin="Silk" CssClass="search-page-search-btn" />
+                <telerik:RadButton runat="server" ID="ResetSearchButton" OnClick="ResetSearchButton_Click" Text="Reset" Skin="Silk" CssClass="search-page-reset-btn" />
             </div>
         </div>
     </div>

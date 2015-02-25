@@ -186,6 +186,12 @@ namespace SunshineChem.UserControls
             Response.Redirect(redirectUrl);
         }
 
+        protected void ResetSearchButton_Click(object sender, EventArgs e)
+        {
+            var productPage = ApplicationContext.Current.Services.ContentService.GetById(ConfigManager.ProductNode).GetUrl();
+            Response.Redirect(productPage);
+        }
+
 
     }
 }
