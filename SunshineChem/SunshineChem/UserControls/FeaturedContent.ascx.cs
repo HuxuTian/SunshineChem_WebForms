@@ -15,13 +15,12 @@ namespace SunshineChem.UserControls
     public partial class FeaturedContent : System.Web.UI.UserControl
     {
         private IContentService ContentService { get { return ApplicationContext.Current.Services.ContentService; } }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            var itemIDs = ContentService.GetById(ConfigManager.FeaturedContentConfig).GetFieldValue("items");
-            var items = ContentService.GetByIds(ContentServiceExtension.IDsToIDList(itemIDs)).Select(c => new FeaturedContentItem(c));
+            var items = ContentService.GetById(ConfigManager.SiteSettings).GetReferenceItems(ConfigManager.SiteSetting.FeaturedContent).Select(c => new FeaturedContentItem(c));
             FeaturedContentRepeater.DataSource = items;
             FeaturedContentRepeater.DataBind();
-            //DeleteNodes();
         }
 
         public void DeleteNodes()
@@ -34,7 +33,6 @@ namespace SunshineChem.UserControls
                 ContentService.Publish(c);
             }
         }
-
 
         public class FeaturedContentItem
         {

@@ -16,8 +16,8 @@
 
     <div class="contact-us-label">
         <asp:Label runat="server" ID="EmailLabel" Text="Email" /><span style="color: red;">*</span>
-        <asp:CustomValidator runat="server" ID="EmailValidator" ControlToValidate="EmailBox" ErrorMessage="(Email address is invalid.)" ValidationGroup="ContactUs" CssClass="contact-us-validation-error-msg" OnServerValidate="EmailValidator_ServerValidate" />
-        <asp:RegularExpressionValidator runat="server" ID="regxValidator" ControlToValidate="EmailBox" ErrorMessage="(Email address is invalid.)" ValidationGroup="ContactUs" CssClass="contact-us-validation-error-msg" />
+        <asp:RequiredFieldValidator runat="server" ControlToValidate="EmailBox" ValidationGroup="ContactUs" ErrorMessage="(Email address is invalid.)" CssClass="contact-us-validation-error-msg" />
+        <asp:RegularExpressionValidator runat="server" ControlToValidate="EmailBox" ErrorMessage="(Email address is invalid.)" ValidationGroup="ContactUs" ValidationExpression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" CssClass="contact-us-validation-error-msg" Display="Dynamic" />
     </div>
     <div>
         <telerik:RadTextBox runat="server" ID="EmailBox" Skin="Silk" Width="500" />
@@ -30,7 +30,7 @@
         <telerik:RadTextBox runat="server" ID="MessageBox" TextMode="MultiLine" Skin="Silk" Width="500" Height="150" />
     </div>
     <div class="contact-us-submit-button">
-        <telerik:RadButton runat="server" ID="SubmitBtn" Text="Submit" Skin="Silk" CausesValidation="true" ValidationGroup="ContactUs" OnClick="SubmitBtn_Click" />
+        <telerik:RadButton runat="server" Skin="Silk" ID="SubmitBtn" Text="Submit" CausesValidation="true" ValidationGroup="ContactUs" OnClick="SubmitBtn_Click" />
     </div>
     <div class="contact-us-required-msg">
         <span style="color: red;">*</span>

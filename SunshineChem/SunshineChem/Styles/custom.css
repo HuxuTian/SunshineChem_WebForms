@@ -307,7 +307,7 @@ a:hover {
 
 .contact-us-email-content {
     font-size: 17px;
-    padding: 0px 40px 0px 40px;
+    padding: 0px 40px 0px 0px;
     margin-bottom: 0;
 }
 
@@ -393,4 +393,12 @@ a:hover {
     font-size: 12px;
     font-style: italic;
     margin: 5px 0 5px 0;
+}
+
+.about-us-container {
+    margin: 30px;
+}
+
+.about-us-title {
+
 }

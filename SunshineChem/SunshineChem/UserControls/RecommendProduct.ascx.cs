@@ -15,29 +15,12 @@ namespace SunshineChem.UserControls
     public partial class RecommendProduct : System.Web.UI.UserControl
     {
         internal IContentService ContentService { get { return ApplicationContext.Current.Services.ContentService; } }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            var configItem = ContentService.GetById(ConfigManager.RecommendProductConfig);
-            var IDs = ContentServiceExtension.IDsToIDList(configItem.Properties["items"].Value.ToString());
-            var dataSource = ContentService.GetByIds(IDs).Select(i => new GridItem(i));
+            var dataSource = ContentService.GetById(ConfigManager.SiteSettings).GetReferenceItems(ConfigManager.SiteSetting.RecommendProduct).Select(i => new GridItem(i));
             GridRecommendProduct.DataSource = dataSource;
             GridRecommendProduct.DataBind();
-
-            //for (var i = 0; i < 100; i++)
-            //{
-            //    GenerateMockProductData();
-            //} 
-            //GenerateMockProductData();   
-            //var children = ContentService.GetChildren(ConfigManager.ProductRepository);
-            //foreach (var c in children)
-            //{
-            //    if (c.Id != 1112)
-            //    {
-            //        ContentService.Delete(c);
-            //    }
-            //}
-
-
         }
 
         public void GenerateMockProductData()
@@ -60,6 +43,7 @@ namespace SunshineChem.UserControls
             ContentService.Save(content);
             ContentService.Publish(content);
         }
+
         public class GridItem
         {
             public int ID { get; set; }
@@ -73,11 +57,11 @@ namespace SunshineChem.UserControls
             public GridItem(IContent content)
             {
                 ID = content.Id;
-                CatNumber = content.Properties["catalogNumber"].Value.ToString();
-                Name = content.Properties["chemicalName"].Value.ToString();
-                CasNumber = content.Properties["casNumber"].Value.ToString();
-                Package = content.Properties["package"].Value.ToString();
-                Price = content.Properties["price"].Value.ToString();
+                CatNumber = content.GetFieldValue("catalogNumber");//.Properties["catalogNumber"].Value.ToString();
+                Name = content.GetFieldValue("chemicalName");//Properties["chemicalName"].Value.ToString();
+                CasNumber = content.GetFieldValue("casNumber");//Properties["casNumber"].Value.ToString();
+                Package = content.GetFieldValue("package");//Properties["package"].Value.ToString();
+                Price = content.GetFieldValue("price");//Properties["price"].Value.ToString();
                 NavigationUrl = content.GetUrl();
             }
         }

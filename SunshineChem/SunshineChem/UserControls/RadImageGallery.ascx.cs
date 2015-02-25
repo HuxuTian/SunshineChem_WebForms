@@ -1,4 +1,5 @@
 ﻿using SunshineChem.Extensions;
+using SunshineChem.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,7 @@ namespace SunshineChem.UserControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var carouselConfig = ApplicationContext.Current.Services.ContentService.GetById(1107).Properties["images"].Value.ToString();
-            var images = ApplicationContext.Current.Services.MediaService.GetByIds(ContentServiceExtension.IDsToIDList(carouselConfig)).Select(i => new ImageItem(i));
-
+            var images = ApplicationContext.Current.Services.ContentService.GetById(ConfigManager.SiteSettings).GetReferenceMediaItems(ConfigManager.SiteSetting.Carousel).Select(i => new ImageItem(i));
             HomeImageGalleryControl.DataSource = images;
             HomeImageGalleryControl.DataBind();
         }

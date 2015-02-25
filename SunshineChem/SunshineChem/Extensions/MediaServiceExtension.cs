@@ -27,6 +27,11 @@ namespace SunshineChem.Extensions
             return url;
         }
 
+        public static IEnumerable<IMedia> GetReferenceMediaItems(this IContent content, string fieldAlias)
+        {
+            return MediaService.GetByIds(ContentServiceExtension.IDsToIDList(content.GetFieldValue(fieldAlias)));
+        }
+
         public static IMedia GetReferenceMediaItem(this IContent content, string fieldAlias)
         {
             var value = content.Properties[fieldAlias].Value;

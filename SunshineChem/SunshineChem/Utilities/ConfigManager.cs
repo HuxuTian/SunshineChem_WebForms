@@ -15,8 +15,14 @@ namespace SunshineChem.Utilities
         public const int ProductNode = 1103;
 
         // Config Items
-        public const int CarouselConfig = 1107;
-        public const int RecommendProductConfig = 1115;
-        public const int FeaturedContentConfig = 3133;
+        public const int SiteSettings = 1115;
+
+        public class SiteSetting
+        {
+            // Field name alias
+            public const string RecommendProduct = "recommendProduct";
+            public const string FeaturedContent = "featuredContent";
+            public const string Carousel = "carousel";
+        }
     }
 }

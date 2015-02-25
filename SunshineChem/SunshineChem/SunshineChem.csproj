@@ -114,6 +114,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\MediaServiceExtension.cs" />
+    <Compile Include="Masterpages\AboutUsPage.Master.cs">
+      <DependentUpon>AboutUsPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masterpages\AboutUsPage.Master.designer.cs">
+      <DependentUpon>AboutUsPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Masterpages\ContactUsPage.Master.cs">
       <DependentUpon>ContactUsPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -152,6 +159,13 @@
     <Compile Include="Orchestration\SearchHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SearchService.cs" />
+    <Compile Include="UserControls\AboutUs.ascx.cs">
+      <DependentUpon>AboutUs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AboutUs.ascx.designer.cs">
+      <DependentUpon>AboutUs.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Carousel.ascx.cs">
       <DependentUpon>Carousel.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -257,6 +271,7 @@
     <Content Include="Masterpages\Site.Master" />
     <Content Include="Masterpages\ProductDetailPage.Master" />
     <Content Include="Masterpages\ContactUsPage.Master" />
+    <Content Include="Masterpages\AboutUsPage.Master" />
     <None Include="Properties\PublishProfiles\Dev.pubxml" />
     <Content Include="Script\carousel.js" />
     <Content Include="Script\jquery-1.11.2.min.js" />
@@ -264,6 +279,7 @@
     <Content Include="Styles\carousel.css" />
     <Content Include="Styles\custom.css" />
     <Content Include="Styles\normalize.min.css" />
+    <Content Include="UserControls\AboutUs.ascx" />
     <Content Include="UserControls\Carousel.ascx" />
     <Content Include="UserControls\ContactUs.ascx" />
     <Content Include="UserControls\FeaturedContent.ascx" />

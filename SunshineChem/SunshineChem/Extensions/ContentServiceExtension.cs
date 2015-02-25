@@ -139,6 +139,11 @@ namespace SunshineChem.Extensions
             return value;
         }
 
+        public static IEnumerable<IContent> GetReferenceItems(this IContent content, string fieldAlias)
+        {
+            return ContentService.GetByIds(IDsToIDList(content.GetFieldValue(fieldAlias)));           
+        }
+
         public static IContent GetReferenceItem(this IContent content, string fieldAlias)
         {
             return ContentService.GetById(int.Parse(GetFieldValue(content, fieldAlias)));
